@@ -12,7 +12,7 @@ function Article (rawDataObj) {
 }
 
 Article.prototype.toHtml = function() {
-  // TODO: Use handlebars to render your articles.
+  // DONE: Use handlebars to render your articles.
   //       - Get your template from the DOM.
   //       - Now "compile" your template with Handlebars.
 
@@ -32,7 +32,7 @@ Article.prototype.toHtml = function() {
   this.daysAgo = parseInt((new Date() - new Date(this.publishedOn))/60/60/24/1000);
   this.publishStatus = this.publishedOn ? `published ${this.daysAgo} days ago` : '(draft)';
 
-  // TODO: Use the function that Handlebars gave you to return your filled-in html template for THIS article.
+  // DONE: Use the function that Handlebars gave you to return your filled-in html template for THIS article.
   var articleData = $('#articleData').html();
   var compile = Handlebars.compile(articleData);
   var newArticle = compile(newArt);
